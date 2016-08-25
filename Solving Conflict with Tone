@@ -1,0 +1,15 @@
+FILE NAME: Arduino-IRremote-master/IRremoteInt.h
+
+You need to find the line that has your Arduino type, mine is the UNO so I used this one:
+
+// Arduino Duemilanove, Diecimila, LilyPad, Mini, Fio, Nano, etc
+#else
+   //#define IR_USE_TIMER1    //tx = pin 9
+   #define IR_USE_TIMER2     tx = pin 3
+
+Now you put the "//" in the second line and remove them from the first line. Will look like that:
+
+// Arduino Duemilanove, Diecimila, LilyPad, Mini, Fio, Nano, etc
+#else
+   #define IR_USE_TIMER1    tx = pin 9
+   //#define IR_USE_TIMER2    // tx = pin 3
